@@ -16,5 +16,8 @@ RUN ln -s /tmp/logs /etc/httpd/logs
 RUN ln -s /tmp/modules /etc/httpd/modules 
 RUN ln -s /tmp/run /etc/httpd/run
 
+RUN cp -p /usr/lib64/httpd/modules/* /tmp/modules/
+RUN cp -rp /run/httpd/ /tmp/run/
+
 EXPOSE 80
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
