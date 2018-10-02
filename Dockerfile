@@ -21,5 +21,7 @@ RUN cp -rp /run/httpd/ /tmp/run/
 
 RUN chmod 777 /run/httpd
 
+RUN sed -ie 's/80/10080/' /etc/httpd/conf/httpd.conf
+
 EXPOSE 80
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
