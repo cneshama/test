@@ -19,5 +19,7 @@ RUN ln -s /tmp/run /etc/httpd/run
 RUN cp -p /usr/lib64/httpd/modules/* /tmp/modules/
 RUN cp -rp /run/httpd/ /tmp/run/
 
+RUN chmod 777 /run/httpd
+
 EXPOSE 80
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
