@@ -26,5 +26,5 @@ RUN chmod 777 /etc/httpd/run
 
 RUN sed -ie 's/80/10080/' /etc/httpd/conf/httpd.conf
 
-EXPOSE 80
+EXPOSE 10080
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
