@@ -11,7 +11,7 @@ RUN echo 'Hello, World!' > /var/www/html/index.html
 RUN sed -ie 's/80/10080/' /etc/httpd/conf/httpd.conf
 #RUN sed -ie '$a ServerName localhost' /etc/httpd/conf/httpd.conf
 
-sed -ie "/^\#ServerName$/ServerName localhost" /etc/httpd/conf/httpd.conf
+RUN sed -ie "/^\#ServerName$/ServerName localhost" /etc/httpd/conf/httpd.conf
 
 EXPOSE 10080
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
