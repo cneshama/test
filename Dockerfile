@@ -1,4 +1,4 @@
-FROM centos9:latest
+FROM centos7:latest
 MAINTAINER Hama
 
 RUN yum -y install httpd
