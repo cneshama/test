@@ -24,9 +24,7 @@ RUN chmod 777 /etc/httpd/logs
 RUN chmod 777 /etc/httpd/modules
 RUN chmod 777 /etc/httpd/run
 
-#RUN sed -ie 's/RUN sed -ie 's/\#ServerName/ServerName/' /etc/httpd/conf/httpd.conf
-RUN sed -ie "/^\#ServerName$/a "ServerName localhost"" /etc/httpd/conf/httpd.conf
-RUN sed -ie 's/RUN sed -ie 's/www.example.com:80/localhost/' /etc/httpd/conf/httpd.conf
+RUN sed -ie '$a ServerName localhost' /etc/httpd/conf/httpd.conf
 RUN sed -ie 's/80/10080/' /etc/httpd/conf/httpd.conf
 
 EXPOSE 10080
